@@ -1,0 +1,16 @@
+docker version
+docker run hello-world
+docker run busybox echo hi there
+docker ps
+docker ps --all
+docker run busybox ping google.com
+docker run -it busybox sh
+docker system prune -f
+run = create + start
+docker create image-name
+docker create image-name start-command
+docker start -a container-name
+docker logs container
+docker stop container # SIGTERM
+docker kill container # SIGKILL
+docker exec -it container command
