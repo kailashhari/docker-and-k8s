@@ -16,3 +16,14 @@ docker kill container # SIGKILL
 docker exec -it container command
 docker build .
 docker commit -c 'CMD ["redis-server"]' container
+docker run -p 3000:3000 kailash1501/simpleweb
+
+Dockerfile syntax
+
+FROM alpine
+WORKDIR /usr/app
+COPY ./package.json ./
+RUN npm install
+COPY ./ ./
+
+CMD [ "npm", "start" ]
