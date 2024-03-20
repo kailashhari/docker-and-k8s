@@ -47,6 +47,14 @@ services:
     build: .
     ports:
       - '8081:8081'
+  web:
+    build:
+      context: .
+        dockerfile: Dockerfile.dev
+      volumes:
+        - /app/node_modules
+        - .:/app
+      command: ["npm", "run", "test"]
 
 
 
