@@ -14,3 +14,5 @@ docker logs container
 docker stop container # SIGTERM
 docker kill container # SIGKILL
 docker exec -it container command
+docker build .
+docker commit -c 'CMD ["redis-server"]' container
