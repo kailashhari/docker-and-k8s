@@ -17,6 +17,7 @@ docker exec -it container command
 docker build .
 docker commit -c 'CMD ["redis-server"]' container
 docker run -p 3000:3000 kailash1501/simpleweb
+docker run -d (detach)
 
 Dockerfile syntax
 
@@ -27,3 +28,25 @@ RUN npm install
 COPY ./ ./
 
 CMD [ "npm", "start" ]
+
+docker compose
+
+docker compose up --build
+docker compose up -d
+docker compose down
+docker compose ps
+
+docker-compose.yml syntax
+
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    restart: on-failure | 'no'/always/on-failure/unless-stopped
+    build: .
+    ports:
+      - '8081:8081'
+
+
+
